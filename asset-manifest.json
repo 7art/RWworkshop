@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/RWworkshop/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/RWworkshop/static/js/main.266f20e0.chunk.js",
+    "main.js.map": "/RWworkshop/static/js/main.266f20e0.chunk.js.map",
+    "runtime-main.js": "/RWworkshop/static/js/runtime-main.a1ddc24d.js",
+    "runtime-main.js.map": "/RWworkshop/static/js/runtime-main.a1ddc24d.js.map",
+    "static/css/2.69121389.chunk.css": "/RWworkshop/static/css/2.69121389.chunk.css",
+    "static/js/2.cb0c5377.chunk.js": "/RWworkshop/static/js/2.cb0c5377.chunk.js",
+    "static/js/2.cb0c5377.chunk.js.map": "/RWworkshop/static/js/2.cb0c5377.chunk.js.map",
+    "index.html": "/RWworkshop/index.html",
+    "precache-manifest.5cf043176dc18b1769d17c8c36e59712.js": "/RWworkshop/precache-manifest.5cf043176dc18b1769d17c8c36e59712.js",
+    "service-worker.js": "/RWworkshop/service-worker.js",
+    "static/css/2.69121389.chunk.css.map": "/RWworkshop/static/css/2.69121389.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/RWworkshop/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.cb0c5377.chunk.js.LICENSE.txt": "/RWworkshop/static/js/2.cb0c5377.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a1ddc24d.js",
+    "static/css/2.69121389.chunk.css",
+    "static/js/2.cb0c5377.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.266f20e0.chunk.js"
+  ]
+}
