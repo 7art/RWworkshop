@@ -2,10 +2,9 @@ import React from "react";
 
 const Pagination = (props) => {
   const { pageNumber, totalPages, updatePageNumber } = props;
-  console.log(props);
+
   let disabledPrev = pageNumber === 1 ? "disabled" : " ";
-  let disabledNext = pageNumber === +totalPages ? "disabled" : " ";
-  console.log("disabledNext", disabledNext);
+  let disabledNext = pageNumber === totalPages ? "disabled" : " ";
   return (
     <nav aria-label="Page navigation example">
       <ul className="pagination justify-content-center">
@@ -17,7 +16,7 @@ const Pagination = (props) => {
               updatePageNumber(pageNumber - 1);
             }}
           >
-            Previous
+            Prev
           </a>
         </li>
         {/* <li className="page-item">

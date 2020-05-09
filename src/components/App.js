@@ -4,6 +4,7 @@ import { API_URL, API_KEY } from "../utils/utils";
 import MovieItem from "./MovieItem";
 import MovieTabs from "./MovieTabs";
 import Pagination from "./Pagination";
+import WillWatchList from "./WillWatchList";
 
 class App extends React.Component {
   constructor() {
@@ -13,7 +14,7 @@ class App extends React.Component {
       moviesWillWatch: [],
       sortBy: "popularity.desc",
       totalPages: 0,
-      pageNumber: 498,
+      pageNumber: 1,
     };
   }
   getFetch = () => {
@@ -22,7 +23,7 @@ class App extends React.Component {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         this.setState({ movies: data.results, totalPages: data.total_pages });
       });
   };
@@ -41,7 +42,7 @@ class App extends React.Component {
   }
 
   removeMovie = (movie) => {
-    console.log("I was clicked");
+    // console.log("I was clicked");
     // const updatedMovie = this.state.movies.filter(function (item) {
     //   return item.id !== movie.id;
     // });
@@ -58,10 +59,10 @@ class App extends React.Component {
     // console.log(this.state);
   };
   addMoviesToWillWatch = (movie) => {
-    console.log("I was clicked");
     const updatedWillWatch = [...this.state.moviesWillWatch, movie];
 
     this.setState({ moviesWillWatch: updatedWillWatch });
+    console.log(this.state.moviesWillWatch);
   };
   removeMoviesToWillWatch = (movie) => {
     const updatedMoviesToWillWatch = this.state.moviesWillWatch.filter(
@@ -77,6 +78,9 @@ class App extends React.Component {
   };
   updatePageNumber = (value) => {
     this.setState({ pageNumber: value });
+  };
+  cheсkWillWatch = (movieId) => {
+    return this.state.moviesWillWatch.find((item) => item.id === movieId);
   };
   render() {
     return (
@@ -95,7 +99,7 @@ class App extends React.Component {
               <div className="col-12 mb-4">
                 <Pagination
                   pageNumber={this.state.pageNumber}
-                  totalPage={this.state.totalPages}
+                  totalPages={this.state.totalPages}
                   updatePageNumber={this.updatePageNumber}
                 />
               </div>
@@ -109,6 +113,7 @@ class App extends React.Component {
                       removeMovie={this.removeMovie}
                       addMoviesToWillWatch={this.addMoviesToWillWatch}
                       removeMoviesToWillWatch={this.removeMoviesToWillWatch}
+                      willwatch={this.cheсkWillWatch(movie.id)}
                     />
                   </div>
                 );
@@ -117,6 +122,7 @@ class App extends React.Component {
           </div>
           <div className="col-3 mt-4">
             <p>Will Watch: {this.state.moviesWillWatch.length}</p>
+            <WillWatchList moviesWillWatch={this.state.moviesWillWatch} />
           </div>
         </div>
       </div>

@@ -2,9 +2,14 @@ import React from "react";
 const defaultImageUrl = "/wwemzKWzjKYJFfCeiB57q3r4Bcm.png";
 
 class MovieItem extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { willWatch: false };
+  }
+  componentDidMount() {
+    if (this.props.willwatch) {
+      this.setState({ willWatch: true });
+    }
   }
   render() {
     const {
@@ -19,7 +24,7 @@ class MovieItem extends React.Component {
           alt={movie.title}
           className="card-img-top"
           src={`https://image.tmdb.org/t/p/w500${
-            movie.backdrop_path || movie.poster_path || defaultImageUrl
+            movie.poster_path || movie.backdrop_path || defaultImageUrl
           }`}
         />
         <div className="card-body">
@@ -40,12 +45,12 @@ class MovieItem extends React.Component {
                   : addMoviesToWillWatch(movie);
               }}
             >
-              {this.state.willWatch ? "Remove Will Watch" : "Will Watch"}
+              {this.state.willWatch ? "Watched" : "Will Watch"}
             </button>
           </div>
-          <button type="button" onClick={removeMovie.bind(null, movie)}>
-            Delete
-          </button>
+          {/*<button type="button" onClick={removeMovie.bind(null, movie)}>
+      Delete
+            </button>*/}
         </div>
       </div>
     );
